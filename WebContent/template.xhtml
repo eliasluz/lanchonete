@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Exemplo para Contratação<ui:insert name="topo" /></title>
+
+<link rel="stylesheet" type="text/css"
+	href="#{facesContext.externalContext.requestContextPath}/Menu.css"
+	media="screen" />
+<link rel="stylesheet" type="text/css"
+	href="#{facesContext.externalContext.requestContextPath}/Corpo.css"
+	media="screen" />
+<link rel="stylesheet" type="text/css"
+	href="#{facesContext.externalContext.requestContextPath}/Rodape.css"
+	media="screen" />
+</head>
+<body>
+	<f:view>
+		<h:form>
+
+			<div class="barraMenu">
+				<rich:toolBar height="26px"
+					style="background-color: rgb(128, 128, 255)">
+
+					<rich:dropDownMenu id="comprasDropDownMenu" mode="ajax"
+						disabled="#{!usuarioBeanC.usuario.acCadastro}">
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:graphicImage value="/imagem/address_book.png"
+									class="tamanhoImagem" styleClass="pic" />
+								<h:outputText value="CADASTRO" />
+							</h:panelGroup>
+						</f:facet>
+						<rich:menuGroup value="Cadastro" icon="/imagem/form_green.png">
+							<rich:menuItem value="Cadastro de item"
+								action="cadastrodeitem.xhtml" icon="/imagem/add.png" />
+							<rich:menuItem value="Cadastro de Lanches" action="cadastrolanche.xhtml"
+								icon="/imagem/add.png" />
+							<rich:menuItem value="Cadastro de Mesas" action="pagina1.xhtml"
+								icon="/imagem/add.png" />
+						</rich:menuGroup>
+						<rich:menuGroup value="Alteração" icon="/imagem/form_yellow.png">
+							<rich:menuItem value="Cadastro de item" action="pagina1.xhtml"
+								icon="/imagem/add.png" />
+							<rich:menuItem value="Cadastro de Lanches" action="pagina1.xhtml"
+								icon="/imagem/add.png" />
+							<rich:menuItem value="Cadastro de Mesas" action="pagina1.xhtml"
+								icon="/imagem/add.png" />
+						</rich:menuGroup>
+					</rich:dropDownMenu>
+
+					<rich:dropDownMenu id="vendasDropDownMenu" mode="ajax"
+						disabled="#{!usuarioBeanC.usuario.acVenda}">
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:graphicImage value="/imagem/cashier.png" width="20px"
+									height="20px" styleClass="pic" />
+								<h:outputText value="VENDAS"
+									title="Vendas e cadastro de Clientes" />
+							</h:panelGroup>
+						</f:facet>
+						<rich:menuGroup value="Vendas" icon="/imagem/add.png">
+							<rich:menuItem value="Cadastro de item" action="pagina1.xhtml"
+								icon="/imagem/add.png" />
+							<rich:menuItem value="Cadastro de Lanches" action="pagina1.xhtml"
+								icon="/imagem/add.png" />
+							<rich:menuItem value="Cadastro de Mesas" action="pagina1.xhtml"
+								icon="/imagem/add.png" />
+						</rich:menuGroup>
+					</rich:dropDownMenu>
+
+					<rich:dropDownMenu id="almoxarifeDropDownMenu" mode="ajax"
+						disabled="#{!usuarioBeanC.usuario.acEstoque}">
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:graphicImage value="/imagem/box.png" width="20px"
+									height="20px" styleClass="pic" />
+								<h:outputText value="ESTÓQUE" title="Controle de estoque" />
+							</h:panelGroup>
+						</f:facet>
+						<rich:menuGroup value="Estóque" icon="/imagem/add.png">
+							<rich:menuItem value="Cadastro de item" action="pagina1.xhtml"
+								icon="/imagem/add.png" />
+							<rich:menuItem value="Cadastro de Lanches" action="pagina1.xhtml"
+								icon="/imagem/add.png" />
+							<rich:menuItem value="Cadastro de Mesas" action="pagina1.xhtml"
+								icon="/imagem/add.png" />
+						</rich:menuGroup>
+					</rich:dropDownMenu>
+
+					<rich:dropDownMenu id="financeiroDropDownMenu" mode="ajax"
+						disabled="#{!usuarioBeanC.usuario.acFinanceiro}">
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:graphicImage value="/imagem/currency_dollar.png" width="20px"
+									height="20px" styleClass="pic" />
+								<h:outputText value="FINANCEIRO" title="Finanças" />
+							</h:panelGroup>
+						</f:facet>
+						<rich:menuItem label="New" value="Cadastrar Matéria Prima"
+							action="pagina1.xhtml" icon="/imagem/shoppingbasket_add.png" />
+						<rich:menuItem label="Open" value="Cadastrar Produto"
+							icon="/imagem/b1.JPG" />
+						<rich:menuGroup label="Save As..." value="Salve">
+							<rich:menuItem label="Save" value="Cadastro de Funcionarios"
+								icon="/imagem/b1.JPG" />
+							<rich:menuItem label="Save All" value="Cadastro de Mesas">
+								<f:facet name="icon">
+									<h:graphicImage value="/imagem/b1.JPG" alt="save_all" />
+								</f:facet>
+							</rich:menuItem>
+						</rich:menuGroup>
+						<rich:menuItem label="Close" />
+						<rich:menuSeparator id="financeiroSeparator11" />
+						<rich:menuItem label="Exit" value="Sair" />
+					</rich:dropDownMenu>
+
+
+					<rich:dropDownMenu id="controleUsuarioDropDownMenu" mode="ajax"
+						disabled="#{!usuarioBeanC.usuario.acControleDeAcesso}">
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:graphicImage value="/imagem/lock.png" class="tamanhoImagem"
+									styleClass="pic" />
+								<h:outputText value="CONTROLE DE ACESSO"
+									title="Controle de acesso do usuário no sistema" />
+							</h:panelGroup>
+						</f:facet>
+						<rich:menuItem id="controleLiberacaoMenuItem" label="New"
+							value="Controle de Acesso de Usuario"
+							actionListener="#{pessoaBean.retornarListaDePessoas}"
+							action="listar.xhtml" icon="/imagem/lock_preferences.png" />
+
+						<rich:menuItem id="controleLiberacaoCadastroUsuario" label="New"
+							value="Cadastro de Usuario" action="cadastrarUsuario.xhtml"
+							icon="/imagem/paste.png" />
+					</rich:dropDownMenu>
+
+					<rich:menuItem id="sair" value="Sair" action="index.xhtml"
+						icon="/imagem/exit.png" styleClass="pic" />
+
+				</rich:toolBar>
+				<div class="usuarioLogado">
+					<h:outputLabel id="labelUsuarioLogado"
+						value="Usuario logado: #{paginaInicialBean.usuario.nome}" />
+				</div>
+			</div>
+
+			<ui:insert name="corpo" />
+			<div class="rodape">
+				<h3>Criação Desenvolvimento de Sistemas WEB</h3>
+			</div>
+		</h:form>
+	</f:view>
+</body>
+</html>

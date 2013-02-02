@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+<style type=""></style>
+</head>
+<body>
+	<ui:composition template="/template.xhtml">
+		<ui:define name="corpo">
+			<h:form>
+				<div class="corpo">
+					<div class="corpoInterno">
+						<div>
+							<fieldset>
+							<legend>Cadastro de Matéria Prima</legend>
+								<h:outputText id="outputText"
+									value="#{pessoaBean.pessoa.codigo}" />
+								<br />
+								<h:outputLabel id="labelNome" value="Nome: " />
+								<h:inputText id="inputNome" value="#{pessoaBean.pessoa.nome}" />
+								<br />
+								<h:outputLabel id="labelLogin" value="Login: " />
+								<h:inputText id="inputLogin" value="#{pessoaBean.pessoa.login}" />
+								<br />
+								<h:outputLabel id="labelSenha" value="Senha: " />
+								<h:inputText id="inputSenha" value="#{pessoaBean.pessoa.senha}" />
+								<br />
+								<h:commandButton class="botao" id="botao" value="OK"
+									actionListener="#{pessoaBean.inserir}" action="inicial.xhtml"/>
+								<br />
+								<h:commandLink id="linkVoltar" value="Voltar" action="inicial.xhtml" immediate="true"/>
+							</fieldset>
+						</div>
+
+					</div>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

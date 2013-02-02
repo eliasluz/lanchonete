@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+<style type=""></style>
+</head>
+<body>
+	<ui:composition template="/template1.xhtml">
+		<ui:define name="corpo">
+			<h:form>
+				<div class="corpo">
+					<div class="corpoInterno">
+						<div>
+							<h:form>
+							
+								<div class="mensagem">
+									<rich:messages></rich:messages>
+								</div>
+
+								<fieldset>
+
+									<legend>Cadastrar Primeiro Usuario</legend>
+
+									<div class="cadastro_Usuario">
+										<h:outputLabel id="labelNome" value="Nome: " />
+										<h:inputText id="inputTextNome"
+											value="#{usuarioBean.usuario.nome}" maxlength="50"
+											style="width: 450px;" />
+										<br />
+										<h:outputLabel id="labelLogin" value="Login: " />
+										<h:inputText id="inputTextLogin"
+											value="#{usuarioBean.usuario.login}" maxlength="20" />
+										<br />
+										<h:outputLabel id="labelSenha" value="Senha: " />
+										<h:inputSecret id="inputTextSenha"
+											value="#{usuarioBean.usuario.senha}" maxlength="10" />
+										<br />
+										<h:outputLabel id="labelSenhaConfima"
+											value="Confirmar Senha: " />
+										<h:inputSecret id="inputTextSenhaConfirma"
+											value="#{usuarioBean.senha}" maxlength="10" />
+									</div>
+									<br />
+									<div class="div_checkBox">
+
+										<h:selectBooleanCheckbox id="checkBoxacCadastro"
+											value="#{usuarioBean.usuario.acCadastro}" />
+										<h:outputLabel id="outPutLabelCadastro"
+											value="Acesso a Cadastros" />
+
+										<br />
+										<h:selectBooleanCheckbox id="checkBoxacVenda"
+											value="#{usuarioBean.usuario.acVenda}" />
+										<h:outputLabel id="outPutLabelVenda" value="Acesso a Vendas" />
+
+										<br />
+										<h:selectBooleanCheckbox id="checkBoxacEstoque"
+											value="#{usuarioBean.usuario.acEstoque}" />
+										<h:outputLabel id="outPutLabelEstoque"
+											value="Acesso a Estoque" />
+
+										<br />
+										<h:selectBooleanCheckbox id="checkBoxacFinanceiro"
+											value="#{usuarioBean.usuario.acFinanceiro}" />
+										<h:outputLabel id="outPutLabelFinanceiro"
+											value="Acesso a Financeiro" />
+
+
+										<br />
+										<h:selectBooleanCheckbox id="checkBoxacControleDeAcesso"
+											value="#{usuarioBean.usuario.acControleDeAcesso}" />
+										<h:outputLabel id="outPutLabelControleDeAcesso"
+											value="Acesso a Controle de Acesso" />
+
+									</div>
+									<div class="div_21">
+										<h:commandButton class="botao botaoEspassamento"
+											id="commandButtonValidar" value="CADASTRAR"
+											actionListener="#{usuarioBean.addUsuario}" />
+										<h:commandButton class="botao botaoEspassamento"
+											id="commandButtonVoltar" value="VOLTAR" action="index.xhtml" />
+									</div>
+								</fieldset>
+							</h:form>
+						</div>
+
+					</div>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

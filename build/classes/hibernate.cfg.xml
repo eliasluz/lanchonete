@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="connection.driver_class">
+
+			oracle.jdbc.OracleDriver
+
+		</property>
+
+		<property name="connection.url">
+
+			jdbc:oracle:thin:@localhost:1521:XE
+
+		</property>
+
+		<property name="dialect">
+
+			org.hibernate.dialect.Oracle10gDialect
+
+		</property>
+
+		<property name="connection.username">
+
+			system
+
+		</property>
+
+		<property name="connection.password">
+
+			system
+
+		</property>
+
+
+		<property name="show_sql">
+
+			true
+
+		</property><!-- mostra o comando sql na tela -->
+
+
+		<property name="format_sql">
+
+			true
+
+		</property><!-- mostra o comando formatador -->
+
+
+		<!-- Controle de conexões -->
+		<property name="hibernate.c3p0.min_size">2</property>  <!-- Quantidade mínima de conexões -->
+		<property name="hibernate.c3p0.max_size">5</property>  <!-- Quantidade máxima de conexões -->
+		<property name="hibernate.c3p0.timeout">300</property> <!-- Tempo máximo permitido para envio de comandos SQL no BD -->
+
+		<property name="hibernate.c3p0.max_statements">50</property>  <!-- Número máximo de comandos SQL a serem armazenados em cache -->
+
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+
+		<!-- Mapeamento das classes no Hibernate -->
+
+		<mapping class="br.com.lanchonete.model.Ingrediente" />
+		<mapping class="br.com.lanchonete.model.Lanche" />
+		<mapping class="br.com.lanchonete.model.Pessoa" />
+		<mapping class="br.com.lanchonete.model.Usuario" />
+		<mapping class="br.com.lanchonete.model.rl.RLLancheIngrediente" />
+		<mapping class="br.com.lanchonete.model.rl.RLLancheIngredientePk" />
+
+
+
+	</session-factory>
+
+</hibernate-configuration>

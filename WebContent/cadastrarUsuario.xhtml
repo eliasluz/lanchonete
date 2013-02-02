@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+<style type=""></style>
+</head>
+<body>
+	<ui:composition template="/template.xhtml">
+		<ui:define name="corpo">
+
+			<h:form>
+				<div class="corpo">
+					<div class="corpoInterno">
+						<div>
+							<div class="mensagem">
+								<rich:messages></rich:messages>
+							</div>
+							<fieldset>
+								<legend>Cadastrar Usuário</legend>
+
+								<div class="cadastro_Usuario">
+									<h:outputLabel id="outPutLabelNome" value="Nome do Usuario: " />
+									<h:inputText id="inputTextNome"
+										value="#{usuarioBeanC.usuarioCadastro.nome}" class="div_12"
+										maxlength="50" style="width: 450px;" />
+									<br />
+									<h:outputLabel id="outPutLabelLogin" value="Login do Usuario: " />
+									<h:inputText id="inputTextLogin"
+										value="#{usuarioBeanC.usuarioCadastro.login}" class="div_12"
+										maxlength="20" />
+									<br />
+									<h:outputLabel id="outPutLabelSenha" value="Senha do Usuario: " />
+									<h:inputSecret id="inputSecretSenha"
+										value="#{usuarioBeanC.usuarioCadastro.senha}" class="div_12"
+										maxlength="10" />
+									<br />
+									<h:outputLabel id="labelSenhaConfima" value="Confirmar Senha: " />
+									<h:inputSecret id="inputTextSenhaConfirma"
+										value="#{usuarioBeanC.senha}" maxlength="10" />
+								</div>
+								<div class="div_checkBox">
+
+									<h:selectBooleanCheckbox id="checkBoxacCadastro"
+										value="#{usuarioBeanC.usuarioCadastro.acCadastro}" />
+									<h:outputLabel id="outPutLabelCadastro"
+										value="Acesso a Cadastros" />
+
+									<br />
+									<h:selectBooleanCheckbox id="checkBoxacVenda"
+										value="#{usuarioBeanC.usuarioCadastro.acVenda}" />
+									<h:outputLabel id="outPutLabelVenda" value="Acesso a Vendas" />
+
+									<br />
+									<h:selectBooleanCheckbox id="checkBoxacEstoque"
+										value="#{usuarioBeanC.usuarioCadastro.acEstoque}" />
+									<h:outputLabel id="outPutLabelEstoque" value="Acesso a Estoque" />
+
+									<br />
+									<h:selectBooleanCheckbox id="checkBoxacFinanceiro"
+										value="#{usuarioBeanC.usuarioCadastro.acFinanceiro}" />
+									<h:outputLabel id="outPutLabelFinanceiro"
+										value="Acesso a Financeiro" />
+
+									<br />
+									<h:selectBooleanCheckbox id="checkBoxacControleDeAcesso"
+										value="#{usuarioBeanC.usuarioCadastro.acControleDeAcesso}" />
+									<h:outputLabel id="outPutLabelControleDeAcesso"
+										value="Acesso a Controle de Acesso" />
+
+								</div>
+								<div class="div_21">
+									<h:commandButton class="botao botaoEspassamento"
+										id="commandButtonValidar" value="CADASTRAR"
+										actionListener="#{usuarioBeanC.addUsuario}" />
+									<h:commandButton class="botao botaoEspassamento"
+										id="commandButtonVoltar" value="VOLTAR" action="inicial.xhtml" />
+								</div>
+
+							</fieldset>
+							<fieldset>
+								<div class="tabela">
+									<rich:dataTable id="tabela"
+										value="#{usuarioBeanC.listaUsuario}" var="u"
+										iterationStatusVar="it" rows="15"
+										rowClasses="odd-row, even-row"
+										rendered="#{not empty usuarioBeanC.listaUsuario}">
+										<rich:column>
+											<f:facet name="header">Nome</f:facet>
+											<h:outputText id="outPutNome" value="#{u.nome}" />
+										</rich:column>
+										<rich:column style="width:50px;">
+											<f:facet name="header">Cadastro</f:facet>
+											<h:selectBooleanCheckbox id="checkBoxacCadastro"
+												value="#{u.acCadastro}" disabled="true" />
+										</rich:column>
+										<rich:column style="width:60px;">
+											<f:facet name="header">Venda</f:facet>
+											<h:selectBooleanCheckbox id="checkBoxacVenda"
+												value="#{u.acVenda}" disabled="true" />
+										</rich:column>
+										<rich:column style="width:60px;">
+											<f:facet name="header">Estoque</f:facet>
+											<h:selectBooleanCheckbox id="checkBoxacEstoque"
+												value="#{u.acEstoque}" disabled="true" />
+										</rich:column>
+										<rich:column style="width:60px;">
+											<f:facet name="header">Financeiro</f:facet>
+											<h:selectBooleanCheckbox id="checkBoxacFinanceiro"
+												value="#{u.acFinanceiro}" disabled="true" />
+										</rich:column>
+										<rich:column style="width:60px;">
+											<f:facet name="header">Controle</f:facet>
+											<h:selectBooleanCheckbox id="checkBoxacControle"
+												value="#{u.acControleDeAcesso}" disabled="true" />
+										</rich:column>
+										<rich:column style="width:15px;">
+											<f:facet name="header">Excluir</f:facet>
+											<h:commandLink id="commandLinkExcluir">
+												<h:graphicImage value="/imagem/delete.png"
+													styleClass="alterarExcluir" />
+											</h:commandLink>
+										</rich:column>
+									</rich:dataTable>
+									<rich:datascroller align="left" for="tabela" maxPages="3"
+										renderIfSinglePage="false" page="#{usuarioBeanC.page}"
+										id="sc2" />
+								</div>
+							</fieldset>
+
+
+
+						</div>
+
+					</div>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

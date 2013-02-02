@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+<style type=""></style>
+</head>
+<body>
+	<ui:composition template="/template1.xhtml">
+		<ui:define name="corpo">
+			<h:form>
+				<div class="corpo">
+					<div class="corpoInterno">
+						<div>
+							<h:form>
+								<div class="mensagem">
+									<rich:messages></rich:messages>
+								</div>
+
+								<fieldset class="fieldLogin">
+
+									<div class="ajustarLogin">
+
+										<h:outputLabel class="labelLogin" id="labelLogin"
+											value="Login: " />
+										<h:inputText id="inputTextLogin"
+											value="#{usuarioBean.usuario.login}" maxlength="10" />
+										<br />
+										<h:outputLabel class="labelLogin" id="labelSenha"
+											value="Senha: " />
+										<h:inputSecret id="inputTextSenha"
+											value="#{usuarioBean.usuario.senha}" maxlength="10" />
+										<br />
+									</div>
+									<h:commandButton class="botao botaoLogin"
+										id="commandButtonValidar" value="Logar"
+										action="#{usuarioBean.conferirLogin}" />
+
+								</fieldset>
+							</h:form>
+						</div>
+
+					</div>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

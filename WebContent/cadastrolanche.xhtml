@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+<style type=""></style>
+</head>
+<body>
+	<ui:composition template="/template.xhtml">
+		<ui:define name="corpo">
+
+			<h:form>
+				<div class="corpo">
+					<div class="corpoInterno">
+						<div>
+							<fieldset>
+								<legend>Cadastro de Lanches</legend>
+								<div class="cadastro_Usuario">
+									<h:outputLabel id="labelValor" value="Nome do Responsavel: " />
+									<h:inputText id="inputValor"
+										value="#{cadastrolancheBean.usuario.nome}"
+										style="width: 450px;" disabled="true" />
+									<br />
+									<h:outputLabel id="labelNome" value="Nome do Item: " />
+									<h:inputText id="inputNome"
+										value="#{cadastrolancheBean.lanche.nome}"
+										style="width: 450px;" maxlength="50" />
+									<br />
+								</div>
+								<div class="div_21">
+									<h:commandButton class="botao botaoEspassamento"
+										id="commandButtonValidar" value="CADASTRAR"
+										actionListener="#{cadastrolancheBean.addLanche}" />
+									<h:commandButton class="botao botaoEspassamento"
+										id="commandButtonVoltar" value="VOLTAR" action="inicial.xhtml" />
+								</div>
+							</fieldset>
+							<fieldset>
+								<div class="tabela">
+									<rich:dataTable id="tabela"
+										value="#{cadastrolancheBean.listaLanche}" var="l"
+										iterationStatusVar="it" rows="15"
+										rowClasses="odd-row, even-row"
+										rendered="#{not empty cadastroDeItemBean.listaIngrediente}">
+										<rich:column style="width:15px;">
+											<f:facet name="header">Código</f:facet>
+											<h:outputText id="outPutCodigo" value="#{l.codigo}" />
+										</rich:column>
+										<rich:column>
+											<f:facet name="header">Nome</f:facet>
+											<h:outputText id="outPutNome" value="#{l.nome}" />
+										</rich:column>
+										<rich:column style="width:200px;">
+											<f:facet name="header">Usuário</f:facet>
+											<h:outputText id="outPutUsuario" value="#{l.usuario}" />
+										</rich:column>
+										<rich:column style="width:15px;">
+											<f:facet name="header">Alterar</f:facet>
+											<h:commandLink id="commandLinkAlterar">
+												<h:graphicImage value="/imagem/document_edit.png"
+													styleClass="alterarExcluir" />
+											</h:commandLink>
+										</rich:column>
+										<rich:column style="width:15px;">
+											<f:facet name="header">Excluir</f:facet>
+											<h:commandLink id="commandLinkExcluir">
+												<h:graphicImage value="/imagem/delete.png"
+													styleClass="alterarExcluir" />
+											</h:commandLink>
+										</rich:column>
+
+									</rich:dataTable>
+									<rich:datascroller align="left" for="tabela" maxPages="3"
+										renderIfSinglePage="false" page="#{cadastrolancheBean.page}"
+										id="sc2" />
+
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

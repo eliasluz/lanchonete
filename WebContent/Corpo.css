@@ -1,0 +1,277 @@
+@CHARSET "UTF-8";
+
+.corpo {
+	width: 100%;
+	height: 700px;
+}
+
+.corpoInterno {
+	margin: auto;
+	width: 98%;
+	height: 700px;
+	overflow: auto;
+}
+
+.botao {
+	width: 120px;
+	height: 30px;
+	margin-top: 15px;
+	border-radius: 10px;
+	font-size: 14px;
+	text-decoration: inherit;
+	text-transform: uppercase;
+}
+
+button[type="button"],button[type="reset"],button[type="submit"],input[type="reset"],input[type="submit"],input[type="button"]
+	{
+	background-color: rgb(98, 176, 255);
+	background-image: inherit;
+	font-family: inherit;
+	font-size: 14px;
+	font-style: inherit;
+	color: rgb(0, 0, 0);
+	box-shadow: 2px 2px 5px 1px black;
+	text-shadow: 1px 1px 1px 1px red;
+}
+
+.botaoLogin {
+	margin-top: 30px;
+	margin-left: 30%;
+}
+
+.botaoEspassamento {
+	float: right;
+	margin-right: 20px;
+}
+
+.borda {
+	width: 200px;
+	height: 150px;
+	margin: auto;
+	border: solid;
+	color: black;
+	background-color: gray;
+	box-shadow: 0px 0px 30px 0px rgb(70, 170, 251);
+}
+
+.log {
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.pic {
+	margin-bottom: -4px;
+	margin-right: 2px;
+}
+
+.search .rf-ddm-itm-sel {
+	background-color: transparent;
+	background-image: none;
+	border-color: transparent;
+	cursor: default;
+}
+
+fieldset {
+	background-color: rgb(232, 232, 232);
+	box-shadow: 6px 5px 20px 3px black;
+	border-color: black;
+	margin-top: 40px;
+	border-radius: 25px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+legend {
+	margin-top: -22px;
+	background-color: transparent;
+	font-size: 18px;
+	font: bolder;
+	text-indent: 40px;
+	border-radius: 25px;
+}
+
+.fieldLogin {
+	height: 250px;
+	width: 350px;
+	border-radius: 25px;
+	margin: auto;
+	margin-top: 10%;
+	background-color: white;
+	box-shadow: 10px 15px 20px 5px black;
+	border-color: black;
+}
+
+.labelLogin {
+	margin-left: 30px;
+	margin-top: 30px;
+}
+
+.ajustarLogin {
+	margin-top: 80px;
+}
+
+textarea[type="textarea"],input[type="text"],input[type="password"],select
+	{
+	background-color: rgb(255, 255, 255);
+	background-image:
+		url("/ProjetoExemplo/faces/a4j/g/3_3_3.Finalorg.richfaces.renderkit.html.images.InputBackgroundImage/DATB/eAFjYGDg!vflzf!!!5kAGqIF6Q__");
+	border-color: rgb(190, 214, 248);
+	color: rgb(0, 0, 0);
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 14px;
+	width: 180px;
+	height: 20px;
+	margin-top: 10px;
+	box-shadow: 5px 5px 10px 2px black;
+	margin-left: 5px;
+}
+
+.rich-toolbar {
+	background-color: transparent;
+	background-image: none;
+	background-position: left top;
+	background-repeat: repeat-x;
+	border: 1px solid rgb(190, 214, 248);
+	padding: 0;
+	background-position: left top;
+}
+
+.imagem_Login {
+	width: 30px;
+	height: 30px;
+}
+
+.mensagem {
+	background-color: red;
+	margin: auto;
+	font-size: 18px;
+}
+
+.cadastro_Usuario {
+	margin-top: 30px;
+	margin-left: 20px;
+	width: 750px;
+}
+
+.div_checkBox {
+	width: 300px;
+	margin-top: 30px;
+}
+
+.tabela {
+	text-align: center;
+	margin: auto;
+	width: 90%;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	text-transform: uppercase;
+	font-size: 18px;
+	background-color: rgb(0, 128, 192);
+}
+
+td {
+	
+}
+
+.rich-table-subheadercell {
+	color: rgb(0, 0, 0);
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 14px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.rich-table-cell {
+	color: rgb(0, 0, 0);
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.rich-dtascroller-table {
+	background-color: rgb(255, 255, 255);
+	border-color: rgb(190, 214, 248);
+}
+
+.rich-dtascroller-table {
+	border-style: solid;
+	border-width: 1px;
+}
+
+.rich-datascr-button-dsbld {
+	color: rgb(190, 214, 248);
+}
+
+.rich-datascr-button,.rich-datascr-ctrls-separator {
+	background-color: rgb(0, 128, 192);
+	border-color: rgb(236, 244, 254);
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 18px;
+}
+
+.rich-datascr-button-dsbld {
+	cursor: default;
+}
+
+.rich-datascr-button,.rich-datascr-ctrls-separator {
+	border-style: solid;
+	border-width: 1px;
+	cursor: pointer;
+	text-align: center;
+	width: 25px;
+}
+
+.alterarExcluir {
+	width: 15px;
+	height: 20px;
+}
+
+.odd-row {
+	background-color: rgb(192, 192, 192);
+}
+
+.even-row {
+	background-color: rgb(160, 160, 160);
+}
+
+.odd-row:hover,.even-row:hover {
+	background-color: rgb(170, 255, 255);
+}
+
+.div_21 {
+	width: 1100px;
+}
+
+.div_20 {
+	width: 1000px;
+}
+
+.div_16 {
+	width: 600px;
+}
+
+.div_15 {
+	width: 500px;
+}
+
+.div_14 {
+	width: 400px;
+}
+
+.div_13 {
+	width: 300px;
+}
+
+.div_12 {
+	width: 200px;
+}
+
+.div_11 {
+	width: 100px;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13319130680640" configfile="/lanchonete/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="156" y="72" id="pf13528561518500" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf13528561518501 pf13587024060350" inlinks="pf13587024060351" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="inicial.xhtml" x="420" y="72" id="pf13528561518502" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf13528592253993 pf13528593399635" inlinks="pf13528561518501 pf13528609176357" path="/inicial.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pagina1.xhtml" x="414" y="276" id="pf13528592253994" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf13528609176357" inlinks="pf13528592253993" path="/pagina1.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listar.xhtml" x="616" y="105" id="pf13528593399636" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf13528593399635" path="/cadastrarUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="criausuario.xhtml" x="144" y="276" id="pf13587024060362" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf13587024060351" inlinks="pf13587024060350" path="/criausuario.xhtml"/>
+  <links id="pf13528561518501" target="pf13528561518502" source="pf13528561518500" outcome="principal" redirect="true"/>
+  <links id="pf13528592253993" target="pf13528592253994" source="pf13528561518502" outcome="inserir" redirect="true"/>
+  <links id="pf13528593399635" target="pf13528593399636" source="pf13528561518502" outcome="cadastrarUsuario" redirect="true"/>
+  <links id="pf13528609176357" target="pf13528561518502" source="pf13528592253994" outcome="voltar" redirect="true"/>
+  <links id="pf13587024060350" target="pf13587024060362" source="pf13528561518500" outcome="criaUsuario" redirect="true"/>
+  <links id="pf13587024060351" target="pf13528561518500" source="pf13587024060362" outcome="index" redirect="true"/>
+</pageflow:Pageflow>

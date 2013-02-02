@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+.rodape {
+	background-image: url("imagem/faixa4.JPG");
+	height: 40px;
+	width: 100%;
+}
+
+h3 {
+	float:inherit;
+	margin-top:15px;
+	text-align: center;
+}

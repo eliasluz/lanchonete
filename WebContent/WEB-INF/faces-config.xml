@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+    
+    <application>
+		<view-handler>org.ajax4jsf.application.AjaxViewHandler</view-handler>
+	</application>
+    <converter>
+    	<converter-id>unidadeConverter</converter-id>
+    	<converter-class>br.com.lanchonete.converter.UnidadeConverter</converter-class>
+    </converter>
+    <managed-bean>
+    	<managed-bean-name>usuarioBean</managed-bean-name>
+    	<managed-bean-class>br.com.lanchonete.beans.UsuarioBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>paginaInicialBean</managed-bean-name>
+    	<managed-bean-class>br.com.lanchonete.beans.PaginaInicialBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>usuarioBeanC</managed-bean-name>
+    	<managed-bean-class>br.com.lanchonete.beans.cadastroUsuario.UsuarioBeanCadastro</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>cadastroDeItemBean</managed-bean-name>
+    	<managed-bean-class>br.com.lanchonete.beans.cadastrodeitem.CadastroDeItemBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>cadastroLancheBean</managed-bean-name>
+    	<managed-bean-class>br.com.lanchonete.beans.cadastrolanche.CadastroLancheBean</managed-bean-class>
+    	<managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+    	<display-name>index.xhtml</display-name>
+    	<from-view-id>/index.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>principal</from-outcome>
+    		<to-view-id>/inicial.xhtml</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>inicial.xhtml</display-name>
+    	<from-view-id>/inicial.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>inserir</from-outcome>
+    		<to-view-id>/pagina1.xhtml</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>inicial.xhtml</display-name>
+    	<from-view-id>/inicial.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>cadastrarUsuario</from-outcome>
+    		<to-view-id>/cadastrarUsuario.xhtml</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>pagina1.xhtml</display-name>
+    	<from-view-id>/pagina1.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>voltar</from-outcome>
+    		<to-view-id>/inicial.xhtml</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>index.xhtml</display-name>
+    	<from-view-id>/index.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>criaUsuario</from-outcome>
+    		<to-view-id>/criausuario.xhtml</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+    	<display-name>criausuario.xhtml</display-name>
+    	<from-view-id>/criausuario.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>index</from-outcome>
+    		<to-view-id>/index.xhtml</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+
+</faces-config>
