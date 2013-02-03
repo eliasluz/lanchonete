@@ -47,7 +47,7 @@
 										value="#{cadastrolancheBean.listaLanche}" var="l"
 										iterationStatusVar="it" rows="15"
 										rowClasses="odd-row, even-row"
-										rendered="#{not empty cadastroDeItemBean.listaIngrediente}">
+										rendered="#{not empty cadastrolancheBean.listaLanche}">
 										<rich:column style="width:15px;">
 											<f:facet name="header">Código</f:facet>
 											<h:outputText id="outPutCodigo" value="#{l.codigo}" />

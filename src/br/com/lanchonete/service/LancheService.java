@@ -15,4 +15,10 @@ public class LancheService {
 	public List<Lanche> buscarLista() {
 	    return lancheDao.buscarLista();
 	}
+
+
+	public void salvar(Lanche lanche) {
+		lancheDao.salvar(lanche);
+		
+	}
 }

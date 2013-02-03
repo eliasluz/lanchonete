@@ -46,6 +46,7 @@ public class CadastroLancheBean {
     }
     
     public void addLanche(ActionEvent evento){
+    	lancheService.salvar(lanche);
 	
     }
     private void preencheLista(){
